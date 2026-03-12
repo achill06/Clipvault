@@ -143,6 +143,7 @@ function render(){
 function set_tray(){
     if(NL_MODE != "window"){return;}
     Neutralino.os.setTray({
+        icon:"",
         menuItems: [
            {id: "SHOW",text: "Show Clipvault"},
            {id: "SEP",text: "-" },
