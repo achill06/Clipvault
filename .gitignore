@@ -6,7 +6,7 @@
 /dist
 # Neutralinojs client (minified)
 neutralino.js
-
+.tmp/
 # Neutralinojs related files
 .storage
 *.log
