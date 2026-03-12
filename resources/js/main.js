@@ -104,7 +104,7 @@ function render(){
                 <span class="material-symbols-outlined" style="font-size: 38px; margin-bottom: 8px;">
                     content_paste
                 </span>
-                <p>${data_list.length===0 ? 'No clips yet — copy something!' : 'No results'}</p>
+                <p>${data_list.length===0 ? 'Watchu doin\' - copy something man!' : 'No results'}</p>
             </div>`;
         return;
     }
@@ -143,7 +143,6 @@ function render(){
 function set_tray(){
     if(NL_MODE != "window"){return;}
     Neutralino.os.setTray({
-        icon: "/icons/trayIcon.png",
         menuItems: [
            {id: "SHOW",text: "Show Clipvault"},
            {id: "SEP",text: "-" },
