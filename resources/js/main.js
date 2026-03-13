@@ -142,16 +142,20 @@ function render(){
 //Setting up the system tray menu for quick access and app control
 function set_tray(){
     if(NL_MODE != "window"){return;}
-    Neutralino.os.setTray({
-        icon:"",
+    const trayConfig = {
         menuItems: [
-           {id: "SHOW",text: "Show Clipvault"},
-           {id: "SEP",text: "-" },
-           {id: "VERSION",text: `Version ${NL_VERSION}`},
-           {id: "SEP2",text: "-"},
-           {id: "QUIT",text: "Quit"}
+           {id: "SHOW",    text: "Show Clipvault"},
+           {id: "SEP",     text: "-"},
+           {id: "VERSION", text: `Version ${NL_VERSION}`},
+           {id: "SEP2",    text: "-"},
+           {id: "QUIT",    text: "Quit"}
         ]
-    });
+    };
+    if(NL_OS === "Linux"){
+        trayConfig.icon = NL_CWD + "/resources/icons/appIcon.png";
+    }
+
+    Neutralino.os.setTray(trayConfig);
 }
 //Handling tray menu actions and window close event to hide the app instead of exiting
 function onTrayMenuItemClicked(event){
